@@ -1,0 +1,570 @@
+{
+ "collectedAt": "2026-10-19T06:00:00Z",
+ "domain": {
+  "dnsRoot": "corp.contoso.example",
+  "netbios": "CONTOSO",
+  "domainMode": "Windows2016Domain",
+  "forestMode": "Windows2012R2Forest",
+  "krbtgtPasswordLastSet": "2023-08-26T06:00:00Z",
+  "tombstoneLifetimeDays": 180,
+  "recycleBinEnabled": false,
+  "fsmo": {
+   "SchemaMaster": "MAD-DC01.corp.contoso.example",
+   "DomainNamingMaster": "MAD-DC01.corp.contoso.example",
+   "PDCEmulator": "MAD-DC01.corp.contoso.example",
+   "RIDMaster": "PAR-DC02.corp.contoso.example",
+   "InfrastructureMaster": "MAD-DC02.corp.contoso.example"
+  }
+ },
+ "domainControllers": [
+  {
+   "name": "MAD-DC01.corp.contoso.example",
+   "site": "Madrid",
+   "os": "Windows Server 2022 Standard",
+   "isGlobalCatalog": true,
+   "reachable": true,
+   "services": {
+    "NTDS": "Running",
+    "DNS": "Running",
+    "Netlogon": "Running",
+    "Kdc": "Running",
+    "DFSR": "Running",
+    "W32Time": "Running"
+   },
+   "sysvolShared": true,
+   "timeOffsetSeconds": 0.0,
+   "ntdsVolumeFreePercent": 61
+  },
+  {
+   "name": "MAD-DC02.corp.contoso.example",
+   "site": "Madrid",
+   "os": "Windows Server 2022 Standard",
+   "isGlobalCatalog": true,
+   "reachable": true,
+   "services": {
+    "NTDS": "Running",
+    "DNS": "Running",
+    "Netlogon": "Running",
+    "Kdc": "Running",
+    "DFSR": "Running",
+    "W32Time": "Running"
+   },
+   "sysvolShared": true,
+   "timeOffsetSeconds": 0.4,
+   "ntdsVolumeFreePercent": 9
+  },
+  {
+   "name": "PAR-DC01.corp.contoso.example",
+   "site": "Paris",
+   "os": "Windows Server 2022 Standard",
+   "isGlobalCatalog": true,
+   "reachable": true,
+   "services": {
+    "NTDS": "Running",
+    "DNS": "Running",
+    "Netlogon": "Running",
+    "Kdc": "Running",
+    "DFSR": "Running",
+    "W32Time": "Running"
+   },
+   "sysvolShared": true,
+   "timeOffsetSeconds": 412.0,
+   "ntdsVolumeFreePercent": 61
+  },
+  {
+   "name": "PAR-DC02.corp.contoso.example",
+   "site": "Paris",
+   "os": "Windows Server 2019 Standard",
+   "isGlobalCatalog": true,
+   "reachable": true,
+   "services": {
+    "NTDS": "Running",
+    "DNS": "Running",
+    "Netlogon": "Running",
+    "Kdc": "Running",
+    "DFSR": "Stopped",
+    "W32Time": "Running"
+   },
+   "sysvolShared": false,
+   "timeOffsetSeconds": 0.4,
+   "ntdsVolumeFreePercent": 61
+  },
+  {
+   "name": "LIS-DC01.corp.contoso.example",
+   "site": "Lisbon",
+   "os": "Windows Server 2019 Standard",
+   "isGlobalCatalog": false,
+   "reachable": true,
+   "services": {
+    "NTDS": "Running",
+    "DNS": "Running",
+    "Netlogon": "Running",
+    "Kdc": "Running",
+    "DFSR": "Running",
+    "W32Time": "Running"
+   },
+   "sysvolShared": true,
+   "timeOffsetSeconds": 0.4,
+   "ntdsVolumeFreePercent": 61
+  },
+  {
+   "name": "LON-DC01.corp.contoso.example",
+   "site": "London",
+   "os": "Windows Server 2022 Standard",
+   "isGlobalCatalog": true,
+   "reachable": false,
+   "services": {},
+   "sysvolShared": null,
+   "timeOffsetSeconds": null,
+   "ntdsVolumeFreePercent": null
+  }
+ ],
+ "replication": [
+  {
+   "destination": "MAD-DC01",
+   "source": "MAD-DC02",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "MAD-DC02",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC02",
+   "source": "MAD-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC02",
+   "source": "MAD-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "PAR-DC01",
+   "source": "PAR-DC02",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T01:00:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 3,
+   "lastError": "1753"
+  },
+  {
+   "destination": "PAR-DC01",
+   "source": "PAR-DC02",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "PAR-DC02",
+   "source": "PAR-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "PAR-DC02",
+   "source": "PAR-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "PAR-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "PAR-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "PAR-DC01",
+   "source": "MAD-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "PAR-DC01",
+   "source": "MAD-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "LIS-DC01",
+   "source": "MAD-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "LIS-DC01",
+   "source": "MAD-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "LIS-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "LIS-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-19T05:48:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 0,
+   "lastError": "0"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "LON-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-16T04:00:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 214,
+   "lastError": "1722"
+  },
+  {
+   "destination": "MAD-DC01",
+   "source": "LON-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-16T04:00:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 214,
+   "lastError": "1722"
+  },
+  {
+   "destination": "PAR-DC01",
+   "source": "LON-DC01",
+   "partition": "DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-16T04:00:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 214,
+   "lastError": "1722"
+  },
+  {
+   "destination": "PAR-DC01",
+   "source": "LON-DC01",
+   "partition": "CN=Configuration,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-10-16T04:00:00Z",
+   "lastAttempt": "2026-10-19T05:48:00Z",
+   "consecutiveFailures": 214,
+   "lastError": "1722"
+  },
+  {
+   "destination": "LIS-DC01",
+   "source": "PAR-DC02",
+   "partition": "DC=DomainDnsZones,DC=corp,DC=contoso,DC=example",
+   "lastSuccess": "2026-07-14T06:00:00Z",
+   "lastAttempt": "2026-10-19T05:30:00Z",
+   "consecutiveFailures": 4120,
+   "lastError": "8524"
+  }
+ ],
+ "dhcpScopes": [
+  {
+   "server": "MAD-DC01",
+   "scopeId": "10.10.20.0",
+   "name": "MAD-Floor2-Users",
+   "inUse": 241,
+   "free": 9,
+   "failover": "Normal"
+  },
+  {
+   "server": "MAD-DC01",
+   "scopeId": "10.10.30.0",
+   "name": "MAD-Floor3-Users",
+   "inUse": 188,
+   "free": 62,
+   "failover": "Normal"
+  },
+  {
+   "server": "MAD-DC01",
+   "scopeId": "10.10.50.0",
+   "name": "MAD-Guest-WiFi",
+   "inUse": 445,
+   "free": 61,
+   "failover": "Normal"
+  },
+  {
+   "server": "PAR-DC01",
+   "scopeId": "10.20.20.0",
+   "name": "PAR-Users",
+   "inUse": 120,
+   "free": 130,
+   "failover": "CommunicationInterrupted"
+  },
+  {
+   "server": "LIS-DC01",
+   "scopeId": "10.30.20.0",
+   "name": "LIS-Users",
+   "inUse": 61,
+   "free": 189,
+   "failover": null
+  },
+  {
+   "server": "MAD-DC01",
+   "scopeId": "10.10.40.0",
+   "name": "MAD-Printers",
+   "inUse": 22,
+   "free": 228,
+   "failover": "Normal"
+  }
+ ],
+ "gpos": [
+  {
+   "name": "Default Domain Policy",
+   "links": 1,
+   "userVersion": 0,
+   "computerVersion": 14
+  },
+  {
+   "name": "Default Domain Controllers Policy",
+   "links": 1,
+   "userVersion": 0,
+   "computerVersion": 9
+  },
+  {
+   "name": "WKS - Security baseline",
+   "links": 3,
+   "userVersion": 2,
+   "computerVersion": 31
+  },
+  {
+   "name": "WKS - BitLocker",
+   "links": 3,
+   "userVersion": 0,
+   "computerVersion": 6
+  },
+  {
+   "name": "USR - Drive maps",
+   "links": 4,
+   "userVersion": 18,
+   "computerVersion": 0
+  },
+  {
+   "name": "USR - Printers Madrid",
+   "links": 1,
+   "userVersion": 7,
+   "computerVersion": 0
+  },
+  {
+   "name": "SRV - Windows Update",
+   "links": 2,
+   "userVersion": 0,
+   "computerVersion": 11
+  },
+  {
+   "name": "TEST - Edge settings (old)",
+   "links": 0,
+   "userVersion": 3,
+   "computerVersion": 5
+  },
+  {
+   "name": "New Group Policy Object",
+   "links": 1,
+   "userVersion": 0,
+   "computerVersion": 0
+  },
+  {
+   "name": "WKS - Windows 10 legacy",
+   "links": 0,
+   "userVersion": 0,
+   "computerVersion": 22
+  }
+ ],
+ "privilegedGroups": [
+  {
+   "group": "Domain Admins",
+   "members": [
+    {
+     "sam": "adm-jgarcia",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-10-18T06:00:00Z",
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "adm-lmartin",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-10-17T06:00:00Z",
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "adm-pdubois",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-10-15T06:00:00Z",
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "adm-asilva",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-10-13T06:00:00Z",
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "adm-rlopez",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-06-01T06:00:00Z",
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "svc-backup",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-10-19T06:00:00Z",
+     "passwordNeverExpires": true
+    },
+    {
+     "sam": "adm-contractor01",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": null,
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "Tier0-Admins",
+     "type": "group",
+     "enabled": true,
+     "lastLogon": "2026-10-19T06:00:00Z",
+     "passwordNeverExpires": false
+    }
+   ]
+  },
+  {
+   "group": "Enterprise Admins",
+   "members": [
+    {
+     "sam": "adm-jgarcia",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2026-10-18T06:00:00Z",
+     "passwordNeverExpires": false
+    }
+   ]
+  },
+  {
+   "group": "Schema Admins",
+   "members": [
+    {
+     "sam": "Administrator",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2025-09-14T06:00:00Z",
+     "passwordNeverExpires": true
+    }
+   ]
+  },
+  {
+   "group": "Administrators",
+   "members": [
+    {
+     "sam": "Administrator",
+     "type": "user",
+     "enabled": true,
+     "lastLogon": "2025-09-14T06:00:00Z",
+     "passwordNeverExpires": true
+    },
+    {
+     "sam": "Domain Admins",
+     "type": "group",
+     "enabled": true,
+     "lastLogon": "2026-10-19T06:00:00Z",
+     "passwordNeverExpires": false
+    },
+    {
+     "sam": "Enterprise Admins",
+     "type": "group",
+     "enabled": true,
+     "lastLogon": "2026-10-19T06:00:00Z",
+     "passwordNeverExpires": false
+    }
+   ]
+  }
+ ],
+ "accounts": {
+  "totalUsers": 1180,
+  "totalComputers": 1310,
+  "staleUsers": 74,
+  "staleComputers": 162,
+  "staleDays": 90,
+  "passwordNeverExpires": 23
+ },
+ "subnets": [
+  "10.10.0.0/16",
+  "10.20.0.0/16",
+  "10.30.0.0/16",
+  "10.40.0.0/16"
+ ],
+ "noClientSite": [
+  {
+   "ip": "10.50.12.34",
+   "count": 41
+  },
+  {
+   "ip": "10.50.12.80",
+   "count": 17
+  },
+  {
+   "ip": "172.16.8.20",
+   "count": 6
+  },
+  {
+   "ip": "10.20.4.11",
+   "count": 3
+  }
+ ]
+}
