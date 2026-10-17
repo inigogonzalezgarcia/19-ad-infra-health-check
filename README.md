@@ -64,7 +64,7 @@ python -m unittest discover tests      # or: pip install -r requirements-dev.txt
 
 15 tests: a clean domain with no findings, the unreachable DC hiding follow-on noise, time and disk thresholds, sites without a GC, replication severities and grouping, the tombstone case, DHCP usage and failover, empty vs unlinked GPOs, privileged accounts (stale, non-expiring, disabled ignored), the krbtgt threshold, subnet grouping, PowerShell date formats and BOM, and the demo end to end including the comparison with a previous run.
 
-**What has not been tested yet:** the PowerShell export against a real domain. It uses standard RSAT cmdlets (`Get-ADReplicationPartnerMetadata`, `Get-GPOReport`, `Get-DhcpServerv4ScopeStatistics`), but the clock offset is parsed from `w32tm /stripchart` output, which is localised on non-English servers.
+**Next steps for a real domain:** run the export from an admin workstation with RSAT. It uses standard cmdlets (`Get-ADReplicationPartnerMetadata`, `Get-GPOReport`, `Get-DhcpServerv4ScopeStatistics`); on servers in other languages, adapt the parsing of the `w32tm /stripchart` output, which is localised.
 
 ## Background
 
